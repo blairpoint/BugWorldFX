@@ -82,8 +82,6 @@ public class Main extends Application {
 
 						circle.setTranslateX(circle.getTranslateX() + dx );
 						circle.setTranslateY(circle.getTranslateY() + dy );
-
-						
 					}				
 										
 				}
