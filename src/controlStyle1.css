@@ -1,0 +1,22 @@
+
+/* 
+    Document   : controlStyle1
+*/
+
+.root{
+    -fx-font-size: 14pt;
+    -fx-font-family: "Tahoma";
+    -fx-base: #42c5fa;
+    -fx-background: #c0d6e4;
+    -fx-focus-color: #42c5fa;
+}
+
+
+
+.button{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #42c5fa;
+    -fx-border-radius: 15;
+    -fx-background-radius: 33;
+    -fx-padding: 12;
+}

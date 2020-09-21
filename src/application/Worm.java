@@ -2,20 +2,20 @@ package application;
 
 import javafx.scene.paint.Color;
 
-public class Ant extends Bug {
+public class Worm extends Bug {
 	
-	public Ant (String nm, char sym, int x, int y, String imagePath) {
-			super ("Ant",nm, sym, x, y, 20, imagePath);
+	public Worm (String nm, char sym, int x, int y, String imagePath) {
+			super ("Worm",nm, sym, x, y, 15, imagePath);
 	}
-	public Ant() {
+	public Worm() {
 		super();
-		this.setSpecies("Ant");
-		this.setEnergy(20);
-//		this.setRadius(15);
-//		this.setFill(Color.BLUE);
+		this.setSpecies("Worm");
+		this.setEnergy(3);
+//		this.setRadius(12);
+//		this.setFill(Color.ORANGE);
 	}
 	public void move(int direction) {
-		//System.out.println("Moving the Ant, "+getName());	
+		//System.out.println("Moving the Spider,"+getName());	
 		if (direction==Constants.NORTH) {
 			if (this.getY() > 1) {
 			this.setY(this.getY() -1);
@@ -35,11 +35,13 @@ public class Ant extends Bug {
 		} else if (direction==Constants.RANDOM) {
 			System.out.println("Randomising position");
 			
+			
 		} else if (direction==Constants.quit){
 			System.err.println("End Move");
 			System.exit(1);
 		}
 //		System.out.println(getName() + " | " + getX() + " | " + getY());
-
+		
 	}		
 }
+

@@ -2,7 +2,10 @@ package application;
 
 import com.sun.prism.paint.Color;
 
-public class Bug extends javafx.scene.shape.Circle{
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public class Bug extends ImageView{
 
 	private String species;
 	private String name;
@@ -10,6 +13,7 @@ public class Bug extends javafx.scene.shape.Circle{
 	private int x;
 	private int y;
 	private int energy;
+	private int radius;
 	private int id;
 
 	// private static int BUG_COUNT = 0;
@@ -19,29 +23,43 @@ public class Bug extends javafx.scene.shape.Circle{
 		species = "species";
 		name = "name";
 		symbol = '%';
-		x = 5;
-		y = 5;
+		x = 25;
+		y = 25;
 		energy = 10;
 		Constants.BUG_COUNT++;
 		id = Constants.BUG_COUNT;
 
 	}
 
-	public Bug(String sp, String nm, char sym, int x, int y, int nrg) {
+	public Bug(String sp, String nm, char sym, int x, int y, int nrg, String imagePath) {
 		super();
 		this.species = sp;
 		this.name = nm;
 		this.symbol = sym;
-		this.x = x;
-		this.y = y;
+//		this.x = x;
+//		this.y = y;
 		this.energy = nrg;
+		//this.radius = r;
 		Constants.BUG_COUNT++;
 		id = Constants.BUG_COUNT;
+//		
+//		this.setX(x);
+//		this.setY(y);		
+		setImage(new Image(imagePath));
+        setFitWidth(50);
+        setPreserveRatio(true);
+        setSmooth(true);
+        setCache(true);
+        
+        this.setTranslateX(x);
+        this.setTranslateY(y);
 		
-		this.setTranslateX(x);
-		this.setTranslateX(y);
-		this.setFill(javafx.scene.paint.Color.BLACK);
-		this.setRadius(7);
+		
+		
+//		this.setCenterX(x);
+//		this.setCenterY(y);
+//		this.setFill(javafx.scene.paint.Color.BLACK);
+//		this.setRadius(17);
 	}
 
 	public String getSpecies() {
@@ -68,22 +86,8 @@ public class Bug extends javafx.scene.shape.Circle{
 		this.symbol = symbol;
 	}
 
-	public int getX() {
-		return x;
-	}
 
-	public void setX(int x) {
-		this.x = x;
-	}
-
-	public int getY() {
-		return y;
-	}
-
-	public void setY(int y) {
-		this.y = y;
-	}
-
+	
 	public int getEnergy() {
 		return energy;
 	}
