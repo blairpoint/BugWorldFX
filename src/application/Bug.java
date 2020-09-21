@@ -46,7 +46,7 @@ public class Bug extends ImageView{
 //		this.setX(x);
 //		this.setY(y);		
 		setImage(new Image(imagePath));
-        setFitWidth(50);
+        setFitWidth(70);
         setPreserveRatio(true);
         setSmooth(true);
         setCache(true);

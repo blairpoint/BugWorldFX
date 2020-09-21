@@ -39,10 +39,10 @@ public class Main extends Application {
 		// bugs.add(new Bug("NA", "General", 'B', 50, 50, 20));
 
 		
-		bugs.add(new Ant("Anty", 'A', 150, 250, "pacman3.gif"));
-//		bugs.add(new Ant("Anty", '#', 80, 80, "pacman3.gif"));
-//		bugs.add(new Worm("Wormy", 'W', 20, 210, "pacman3.gif"));
-//		bugs.add(new Spider("Spidey", 'S', 50, 50, "pacman3.gif"));
+		bugs.add(new Ant("Anty", 'A', 150, 250, "pacman1.gif"));
+		bugs.add(new Ant("Anty", '#', 80, 80, "pacman2.gif"));
+		bugs.add(new Worm("Wormy", 'W', 70, 210, "pacman3.gif"));
+		bugs.add(new Spider("Spidey", 'S', 50, 50, "pacman4.gif"));
 
 
 
@@ -63,46 +63,7 @@ public class Main extends Application {
 			root.prefHeight(600);
 			root.prefWidth(500);
 			
-//			
-//			Image ant = new Image("pacman1.gif");
-//	        ImageView iv1 = new ImageView();
-//	        iv1.setImage(ant);
-//	        iv1.setFitWidth(50);
-//	        iv1.setTranslateX(100);
-//	        iv1.setTranslateY(150);
-//	        iv1.setPreserveRatio(true);
-//	        iv1.setSmooth(true);
-//	        iv1.setCache(true);
-//	        
-//			Image spider = new Image("pacman2.gif");
-//	        ImageView iv2 = new ImageView();
-//	        iv2.setImage(spider);
-//	        iv2.setFitWidth(50);
-//	        iv2.setTranslateX(60);
-//	        iv2.setTranslateY(222);
-//	        iv2.setPreserveRatio(true);
-//	        iv2.setSmooth(true);
-//	        iv2.setCache(true);
-//	        
-//			Image worm = new Image("pacman4.gif");
-//	        ImageView iv3 = new ImageView();
-//	        iv3.setImage(worm);
-//	        iv3.setFitWidth(50);
-//	        iv3.setTranslateX(10);
-//	        iv3.setTranslateY(44);
-//	        iv3.setPreserveRatio(true);
-//	        iv3.setSmooth(true);
-//	        iv3.setCache(true);
-//	        
-//			Image bug = new Image("pacman3.gif");
-//	        ImageView iv4 = new ImageView();
-//	        iv4.setImage(bug);
-//	        iv4.setFitWidth(50);
-//	        iv4.setTranslateX(100);
-//	        iv4.setTranslateY(95);
-//	        iv4.setPreserveRatio(true);
-//	        iv4.setSmooth(true);
-//	        iv4.setCache(true);
+
 
 			Button btn = new Button("Add ");
 			Button btn2 = new Button("Remove");
@@ -114,10 +75,6 @@ public class Main extends Application {
 			root.getChildren().addAll(bugs);
 
 			hBox.getChildren().add(vBox);
-//			hBox.getChildren().add(iv1);
-//			hBox.getChildren().add(iv2);
-//			hBox.getChildren().add(iv3);
-//			hBox.getChildren().add(iv4);
 
 
 			hBox.getChildren().add(root);
@@ -145,7 +102,7 @@ public class Main extends Application {
 
 			});
 
-			KeyFrame frame = new KeyFrame(Duration.millis(12), new EventHandler<ActionEvent>() {
+			KeyFrame frame = new KeyFrame(Duration.millis(6), new EventHandler<ActionEvent>() {
 
 				@Override
 				public void handle(ActionEvent t) {
@@ -165,64 +122,75 @@ public class Main extends Application {
 							System.out.println("In there");
 							// circle.setFill(Color.BLUE);
 						}
-//
-//						circle.setX(circle.getX() + d1x);
-//						circle.setY(circle.getY() + d1y);
-						
-						circle.setTranslateX(circle.getTranslateX() + d1x);
-						circle.setTranslateY(circle.getTranslateY() + d1y);
-						
+////
+////						circle.setX(circle.getX() + d1x);
+////						circle.setY(circle.getY() + d1y);
 //						
-//						if (circle instanceof Ant) {
-//							if (circle.getX() + circle.getTranslateX() < circle.getFitWidth() || circle.getX()
-//									+ circle.getTranslateX() + circle.getFitWidth() > scene.getWidth()) {
-//								d1x = -d1x;
-//								// circle.setFill(Color.RED);
+//						circle.setTranslateX(circle.getTranslateX() + d2x);
+//						circle.setTranslateY(circle.getTranslateY() + d2y);
+//						
+////						
+						if (circle instanceof Ant) {
+							if (circle.getX() + circle.getTranslateX() < circle.getFitWidth() || circle.getX()
+									+ circle.getTranslateX() + circle.getFitWidth() > scene.getWidth()) {
+								d2x = -d2x;
+								// circle.setFill(Color.RED);
+
+							}
+							if (circle.getY() + circle.getTranslateY() < circle.getFitHeight() || circle.getY()
+									+ circle.getTranslateY() + circle.getFitHeight() > scene.getHeight()) {
+								d2y = -d2y;
+								// circle.setFill(Color.BLUE);
+							}
+
+							circle.setTranslateX(circle.getTranslateX() + d2x);
+							circle.setTranslateY(circle.getTranslateY() + d2y);
+
+						} 
+						else if (circle instanceof Spider) {
+							if (circle.getX() + circle.getTranslateX() < circle.getFitWidth() || circle.getX()
+									+ circle.getTranslateX() + circle.getFitWidth() > scene.getWidth()) {
+								d3x = -d3x;
+								// circle.setFill(Color.RED);
+
+							}
+							if (circle.getY() + circle.getTranslateY() < circle.getFitHeight() || circle.getY()
+									+ circle.getTranslateY() + circle.getFitHeight() > scene.getHeight()) {
+								d3y = -d3y;
+								// circle.setFill(Color.BLUE);
+							}
+
+							circle.setTranslateX(circle.getTranslateX() + d3x);
+							circle.setTranslateY(circle.getTranslateY() + d3y);
+
+						} 
+						else if (circle instanceof Worm) {
+							if (circle.getX() + circle.getTranslateX() < circle.getFitWidth() || circle.getX()
+									+ circle.getTranslateX() + circle.getFitWidth() > scene.getWidth()) {
+								d4x = -d4x;
+								// circle.setFill(Color.RED);
+
+							}
+							if (circle.getY() + circle.getTranslateY() < circle.getFitHeight() || circle.getY()
+									+ circle.getTranslateY() + circle.getFitHeight() > scene.getHeight()) {
+								d4y = -d4y;
+								// circle.setFill(Color.BLUE);
+							}
+
+							circle.setTranslateX(circle.getTranslateX() + d4x);
+							circle.setTranslateY(circle.getTranslateY() + d4y);
+						}						
+//						if (circle.getX() + circle.getTranslateX() < circle.getFitWidth() || circle.getX()
+//								+ circle.getTranslateX() + circle.getFitWidth() > scene.getWidth()) {
+//							d1x = -d1x;
+//							// circle.setFill(Color.RED);
 //
-//							}
-//							if (circle.getY() + circle.getTranslateY() < circle.getFitHeight() || circle.getY()
-//									+ circle.getTranslateY() + circle.getFitHeight() > scene.getHeight()) {
-//								d1y = -d1y;
-//								// circle.setFill(Color.BLUE);
-//							}
-//
-//							circle.setTranslateX(circle.getTranslateX() + d1x);
-//							circle.setTranslateY(circle.getTranslateY() + d1y);
-//
-//						} else if (circle instanceof Spider) {
-//							
-//							if (circle.getCenterX() + circle.getTranslateX() < circle.getRadius() || circle.getCenterX()
-//									+ circle.getTranslateX() + circle.getRadius() > scene.getWidth()) {
-//								d2x = -d2x;
-//							}
-//							if (circle.getCenterY() + circle.getTranslateY() < circle.getRadius() || circle.getCenterY()
-//									+ circle.getTranslateY() + circle.getRadius() > scene.getHeight()) {
-//								d2y = -d2y;
-//							}
-//
-//							circle.setTranslateX(circle.getTranslateX() + d2x);
-//							circle.setTranslateY(circle.getTranslateY() + d2y);
-//
-//						} else if (circle instanceof Worm) {
-//							circle.setFill(Color.BLUE);
-//							if (circle.getCenterX() + circle.getTranslateX() < circle.getRadius() || circle.getCenterX()
-//									+ circle.getTranslateX() + circle.getRadius() > scene.getWidth()) {
-//								d3x = -d3x;
-//							}
-//							if (circle.getCenterY() + circle.getTranslateY() < circle.getRadius() || circle.getCenterY()
-//									+ circle.getTranslateY() + circle.getRadius() > scene.getHeight()) {
-//								d3y = -d3y;
-//							}
-//
-//							circle.setTranslateX(circle.getTranslateX() + d3x);
-//							circle.setTranslateY(circle.getTranslateY() + d3y);
-//						}						
-//						if(circle.getCenterX() + circle.getTranslateX() < circle.getRadius() || circle.getCenterX() + circle.getTranslateX() + circle.getRadius() > scene.getWidth()) {
-//							d4x = -d4x;
-//							}
-//						if(circle.getCenterY() + circle.getTranslateY() < circle.getRadius()|| circle.getCenterY() + circle.getTranslateY() + circle.getRadius() > scene.getHeight()) {
-//							d4y = -d4y;
-//							}
+//						}
+//						if (circle.getY() + circle.getTranslateY() < circle.getFitHeight() || circle.getY()
+//								+ circle.getTranslateY() + circle.getFitHeight() > scene.getHeight()) {
+//							d1y = -d1y;
+//							// circle.setFill(Color.BLUE);
+//						}
 //
 //						circle.setTranslateX(circle.getTranslateX() + d4x );
 //						circle.setTranslateY(circle.getTranslateY() + d4y );
