@@ -138,7 +138,7 @@ public class Bug extends ImageView{
 
 	public void setImage(String imagePath) {
 		// TODO Auto-generated method stub
-		setImage(new Image("pacmanDEAD.gif"));
+		setImage(new Image(imagePath));
 
 		
 	}
