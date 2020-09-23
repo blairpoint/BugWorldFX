@@ -51,7 +51,7 @@ public class Plant extends ImageView{
 //		this.dx = 0f;
 //		this.dy = 0f;
 		setImage(new Image(imagePath));
-        setFitWidth(80);
+        setFitWidth(90);
         setPreserveRatio(true);
 //        setSmooth(true);
 //        setCache(true);

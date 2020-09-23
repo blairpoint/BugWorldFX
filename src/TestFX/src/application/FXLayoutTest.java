@@ -66,14 +66,16 @@ public class FXLayoutTest extends Application {
 	private void createPlants() {
 		System.out.println("In");
 
-		plants.add(new Plant("planty", "plant", 'p', 150, 250, 1150, "plant1.gif"));
-		plants.add(new Plant("MrPlant", "plant", 'P', 100, 25, 400, "plant2.gif"));
+		plants.add(new Plant("planty", "plant", 'p', 650, 250, 1150, "plant1.gif"));
+		plants.add(new Plant("MrPlant", "plant", 'P', 920, 325, 400, "plant2.gif"));
 		plants.add(new Plant("planty", "plant", 'p', 400, 300, 500, "plant1.gif"));
 		plants.add(new Plant("MrPlant", "plant", 'P', 300, 25, 400, "plant2.gif"));
 		plants.add(new Plant("Cactus", "plant", 'c', 550, 50, 250, "plant4.gif"));
 		plants.add(new Plant("planty", "plant", 'p', 40, 400, 1150, "plant1.gif"));
 		plants.add(new Plant("MrPlant", "plant", 'P', 300, 225, 400, "plant2.gif"));
-		plants.add(new Plant("Cactus", "plant", 'c', 750, 450, 1250, "plant4.gif"));
+		plants.add(new Plant("Cactus", "plant", 'c', 55, 60, 1250, "plant4.gif"));
+		plants.add(new Plant("Banana", "plant", 'b', 800,30,1000,"plant5.gif"));
+		plants.add(new Plant("nana", "plant", 'n', 580,430,1000,"plant5.gif"));
 
 		for (Plant p : this.plants) {
 			grid.getChildren().add(p);
@@ -162,25 +164,25 @@ public class FXLayoutTest extends Application {
 						}
 						
 						
-						if (c.getEnergy() < 350) {
-							c.setImage("pacmanDEAD.gif");
+						if (c.getEnergy() < 250) {
 							
 							//c.setImage("explosion2.gif");
 
 		
 
-						}
-						if (c.getEnergy() < 150) {
-							c.setFitWidth(40);
+//						}
+//						if (c.getEnergy() < 150) {
+//							c.setFitWidth(40);
 						}
 						if (c.getEnergy() < 100) {
-							c.setFitWidth(30);
+							c.setImage("pacmanDEAD.gif");
+
 						}	
 						if (c.getEnergy() < 75) {
-							c.setFitWidth(20);
+							c.setFitWidth(40);
 						}	
 						if (c.getEnergy() < 50) {
-							c.setFitWidth(10);
+							c.setFitWidth(20);
 						}	
 						if (c.getEnergy() < 20) {
 							c.setImage("explosion.gif");
@@ -188,6 +190,7 @@ public class FXLayoutTest extends Application {
 						}	
 						if (c.getEnergy() > 350 ) {
 							c.setFitWidth(50);
+						
 							// maybe do some instanceof things to restore the image
 						}
 						if (c.getEnergy() < 1) {
@@ -212,6 +215,7 @@ public class FXLayoutTest extends Application {
 							System.out.println("EAT "+o.getName()+" x "+o.getX()+" y "+o.getY());
 							o.setEnergy(o.getEnergy()+1000);
 							a.setEnergy(-200);
+							a.setFitWidth(a.getFitWidth()-5);
 						}
 						}
 						}
